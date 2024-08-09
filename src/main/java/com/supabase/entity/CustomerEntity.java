@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 public class CustomerEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
     private Long id;
 
@@ -14,7 +15,7 @@ public class CustomerEntity {
     private String firstName;
 
     @Column(name = "last_name")
-    private String last_name;
+    private String lastName;
 
     @Column(name = "city")
     private String city;
@@ -38,11 +39,11 @@ public class CustomerEntity {
     }
 
     public String getLast_name() {
-        return last_name;
+        return lastName;
     }
 
     public CustomerEntity setLast_name(String last_name) {
-        this.last_name = last_name;
+        this.lastName = last_name;
         return this;
     }
 
